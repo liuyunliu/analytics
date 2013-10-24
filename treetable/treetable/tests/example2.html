@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>HTML Treetable - Example 1</title>
+  <script type="text/javascript" src="treetable.js"></script>
+  <script type="text/javascript">
+    treetable_callbacks['eventRowStateChanged'] = 'treetable_eventRowChanged';
+    
+    function treetable_eventRowChanged(rowId, state) {
+      img = document.getElementById(rowId).getElementsByTagName('td')[0].getElementsByTagName('img')[0];
+      if (state == 1) {
+        img.src = 'folder_green_open.png';
+      } else {
+        img.src = 'folder_green.png';
+      }
+      return (true);
+    }  
+  </script>
+  <style type="text/css">
+    .treetable {
+    }
+    
+    .treetable th {
+      background:#ddd;
+      margin:1px;
+      padding: 0 5px;
+      font-weight:normal;
+      font-size: 90%;
+    }
+    
+    .treetable td {
+      background:#eee;
+      margin:1px;
+      padding: 0 5px;
+    }
+    
+    .treetable td.number {
+    text-align:right;
+    }
+    
+    a {
+      text-decoration:none;
+      color:#090;
+    }
+    
+    .button {
+      border:none;
+      margin: 0 4px 0 0;
+    }
+  </style>
+</head>
+<body>                       
+  <a href="#" onclick="treetable_expandAll('table1');">Expand all</a>  <a href="#" onclick="treetable_collapseAll('table1');">Collapse all</a>
+  <table id="table1" class="treetable">
+    <colgroup>
+      <col width="200" />
+      <col width="0*">
+    </colgroup>
+    <tr>
+      <th>Title</th>
+      <th>Population (in millions)</th>
+      <th>Area km<sup>2</sup></th>
+      <th>People / km<sup>2</sup></th>
+    </tr>
+    <tr id="table1_0">
+      <td><a href="#" onclick="treetable_toggleRow('table1_0');"><img src="folder_green_open.png" class="button" alt="" width="16" height="16" />European Union</a></td>
+      <td class="number">454.9</td>
+      <td class="number">3 976 952</td>
+      <td class="number">115</td>
+    </tr>
+    <tr id="table1_0_0">
+      <td>&nbsp;&nbsp;<a href="#" onclick="treetable_toggleRow('table1_0_0');"><img src="folder_green_open.png" class="button" alt="" width="16" height="16" />Austria</a></td>
+      <td class="number">8.2</td>
+      <td class="number">83 858</td>
+      <td class="number">98</td>
+    </tr>
+    <tr id="table1_0_0_0">
+      <td>&nbsp;&nbsp;&nbsp;&nbsp; Vienna</td>
+      <td class="number">1.5</td>
+      <td class="number">-</td>
+      <td class="number">-</td>
+    </tr>
+    <tr id="table1_0_0_1">
+      <td>&nbsp;&nbsp;&nbsp;&nbsp; Graz</td>
+      <td class="number">0.21</td>
+      <td class="number">-</td>
+      <td class="number">-</td>
+    </tr>
+    <tr id="table1_0_1">
+      <td>&nbsp;&nbsp;<a href="#" onclick="treetable_toggleRow('table1_0_1');"><img src="folder_green_open.png" class="button" alt="" width="16" height="16" />Belgium</a></td>
+      <td class="number">10.3</td>
+      <td class="number">30 510</td>
+      <td class="number">340</td>
+    </tr>
+    <tr id="table1_0_1_0">
+      <td>&nbsp;&nbsp;&nbsp;&nbsp; Brussels</td>
+      <td class="number">0.96</td>
+      <td class="number">-</td>
+      <td class="number">-</td>
+    </tr>
+    <tr id="table1_0_2">
+      <td>&nbsp;&nbsp;<a href="#" onclick="treetable_toggleRow('table1_0_2');"><img src="folder_green_open.png" class="button" alt="" width="16" height="16" />Cyprus</a></td>
+      <td class="number">0.8</td>
+      <td class="number">9 250</td>
+      <td class="number">84</td>
+    </tr>
+    <tr id="table1_0_2_0">
+      <td>&nbsp;&nbsp;&nbsp;&nbsp; Famagusta</td>
+      <td class="number">-</td>
+      <td class="number">-</td>
+      <td class="number">-</td>
+    </tr>
+    <tr id="table1_0_3">
+      <td>&nbsp;&nbsp;<a href="#" onclick="treetable_toggleRow('table1_0_3');"><img src="folder_green_open.png" class="button" alt="" width="16" height="16" />Slovenia</a></td>
+      <td class="number">1.9</td>
+      <td class="number">20 253</td>
+      <td class="number">99</td>
+    </tr>
+    <tr id="table1_0_3_0">
+      <td>&nbsp;&nbsp;&nbsp;&nbsp; Ljubljana</td>
+      <td class="number">0.27</td>
+      <td class="number">-</td>
+      <td class="number">-</td>
+    </tr>
+  </table>
+</body>
+</html>
